@@ -1,0 +1,194 @@
+$button-size: 2em;
+
+@import "~@wordpress/base-styles/animations";
+@import "~@wordpress/base-styles/breakpoints";
+@import "~@wordpress/base-styles/colors";
+@import "~@wordpress/base-styles/mixins";
+@import "~@wordpress/base-styles/variables";
+@import "~@wordpress/base-styles/z-index";
+@import "~@wordpress/block-editor/src/style";
+@import "~@wordpress/block-library/src/style";
+@import "~@wordpress/block-library/src/theme";
+@import "~@wordpress/block-library/src/editor";
+@import "~@wordpress/format-library/src/style";
+@import "~@wordpress/block-editor/src/style";
+@import "~@wordpress/editor/src/editor-styles";
+@import "~@wordpress/editor/src/style";
+@import "~@wordpress/components/src/animate/style";
+@import "~@wordpress/components/src/angle-picker-control/style";
+@import "~@wordpress/components/src/autocomplete/style";
+@import "~@wordpress/components/src/base-control/style";
+@import "~@wordpress/components/src/button-group/style";
+@import "~@wordpress/components/src/button/style";
+@import "~@wordpress/components/src/checkbox-control/style";
+@import "~@wordpress/components/src/circular-option-picker/style";
+@import "~@wordpress/components/src/color-indicator/style";
+@import "~@wordpress/components/src/color-picker/style";
+@import "~@wordpress/components/src/custom-gradient-picker/style";
+@import "~@wordpress/components/src/custom-select-control/style";
+@import "~@wordpress/components/src/dashicon/style";
+@import "~@wordpress/components/src/dimension-control/style";
+@import "~@wordpress/components/src/disabled/style";
+@import "~@wordpress/components/src/draggable/style";
+@import "~@wordpress/components/src/drop-zone/style";
+@import "~@wordpress/components/src/dropdown/style";
+@import "~@wordpress/components/src/dropdown-menu/style";
+@import "~@wordpress/components/src/external-link/style";
+@import "~@wordpress/components/src/focal-point-picker/style";
+@import "~@wordpress/components/src/font-size-picker/style";
+@import "~@wordpress/components/src/form-toggle/style";
+@import "~@wordpress/components/src/form-token-field/style";
+@import "~@wordpress/components/src/guide/style";
+@import "~@wordpress/components/src/higher-order/navigate-regions/style";
+@import "~@wordpress/components/src/menu-group/style";
+@import "~@wordpress/components/src/menu-item/style";
+@import "~@wordpress/components/src/menu-items-choice/style";
+@import "~@wordpress/components/src/modal/style";
+@import "~@wordpress/components/src/notice/style";
+@import "~@wordpress/components/src/panel/style";
+@import "~@wordpress/components/src/placeholder/style";
+@import "~@wordpress/components/src/popover/style";
+@import "~@wordpress/components/src/radio-control/style";
+@import "~@wordpress/components/src/resizable-box/style";
+@import "~@wordpress/components/src/responsive-wrapper/style";
+@import "~@wordpress/components/src/sandbox/style";
+@import "~@wordpress/components/src/scroll-lock/style";
+@import "~@wordpress/components/src/select-control/style";
+@import "~@wordpress/components/src/snackbar/style";
+@import "~@wordpress/components/src/spinner/style";
+@import "~@wordpress/components/src/text-control/style";
+@import "~@wordpress/components/src/textarea-control/style";
+@import "~@wordpress/components/src/tip/style";
+@import "~@wordpress/components/src/toggle-control/style";
+@import "~@wordpress/components/src/toolbar/style";
+@import "~@wordpress/components/src/toolbar-button/style";
+@import "~@wordpress/components/src/toolbar-group/style";
+@import "~@wordpress/components/src/tooltip/style";
+@import "~@wordpress/components/src/visually-hidden/style";
+
+::root {
+	@include reset;
+}
+
+$system-stack:
+	-apple-system,
+	BlinkMacSystemFont,
+	'Segoe UI',
+	Roboto,
+	sans-serif !important;
+
+html,
+body {
+	font-family: $default-font;
+	font-size: $default-font-size;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-family: $system-stack;
+}
+
+a,
+div {
+	outline: 0;
+}
+
+.editor-styles-wrapper {
+	width: 100vw;
+
+	@include break-small() {
+		width: 70vw;
+	}
+
+	font-family: $system-stack;
+	font-size: $editor-font-size;
+	line-height: $editor-line-height;
+	color: $dark-gray-900;
+	display: inline-block;
+
+	p {
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	ul,
+	ol {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul li,
+	ol li {
+		// This overrides a bottom margin globally applied to list items in wp-admin.
+		margin-bottom: initial;
+	}
+
+	ul {
+		list-style-type: disc;
+	}
+
+	ol {
+		list-style-type: decimal;
+	}
+
+	ul ul,
+	ol ul {
+		list-style-type: circle;
+	}
+
+	.wp-block {
+		max-width: 700px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.wp-block[data-align="wide"],
+	.wp-block.alignwide {
+		max-width: 1100px;
+	}
+	.wp-block[data-align="full"],
+	.wp-block.alignfull {
+		max-width: none;
+	}
+}
+
+.playground {
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+
+	iframe {
+		width: 100%;
+	}
+
+	.components-navigate-regions {
+		height: 100%;
+	}
+}
+
+.playground__sidebar {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	width: 320px;
+	border-left: $border-width solid $light-gray-500;
+	height: auto;
+	overflow: auto;
+	-webkit-overflow-scrolling: touch;
+	display: none;
+	@include break-small() {
+		display: block;
+	}
+}
+
+@keyframes edit-post__fade-in-animation {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

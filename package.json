@@ -1,0 +1,40 @@
+{
+  "name": "wordpress-block-editor",
+  "version": "1.0.0",
+  "description": "Client only. No PHP.",
+  "keywords": [],
+  "main": "src/index.js",
+  "dependencies": {
+    "@wordpress/babel-preset-default": "4.10.0",
+    "@wordpress/base-styles": "1.4.0",
+    "@wordpress/block-directory": "1.5.7",
+    "@wordpress/block-editor": "3.7.7",
+    "@wordpress/block-library": "2.14.7",
+    "@wordpress/blocks": "6.12.3",
+    "@wordpress/components": "9.2.6",
+    "@wordpress/editor": "9.12.7",
+    "@wordpress/element": "2.11.0",
+    "@wordpress/format-library": "1.14.7",
+    "@wordpress/plugins": "2.12.0",
+    "@wordpress/postcss-themes": "2.3.0",
+    "@wordpress/scripts": "7.1.3",
+    "react": "16.12.0",
+    "react-dates": "21.8.0",
+    "react-dom": "16.12.0"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
